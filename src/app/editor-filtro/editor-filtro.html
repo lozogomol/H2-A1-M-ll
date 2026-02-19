@@ -1,6 +1,6 @@
 <div class="card-grafica">
     <div class="canvas-previus">
-        <img [style.filter]="filtroScss()" src="https://static.wikia.nocookie.net/thepokemonshow/images/8/80/20101007155439%21Ash_Pikachu.png/revision/latest?cb=20140425213328" alt="Imagen">
+        <img [style.filter]="filtroScss()" src="https://archives.bulbagarden.net/media/upload/thumb/4/49/Ash_Pikachu.png/375px-Ash_Pikachu.png" alt="Imagen">
         <div class="controles">
             <label>Brillo: {{ brillo()}}%</label>
             <input type="range" min="0" max="200" [value]="brillo()" (input)="actualizar('brillo', $event)">
@@ -8,6 +8,9 @@
             <input type="range" min="0" max="200" [value]="contraste()" (input)="actualizar('contraste', $event)">
             <label>Desenfoque: {{ blur()}}px</label>
             <input type="range" min="0" max="20" [value]="blur()" (input)="actualizar('blur', $event)">
+            <label>Blanco y negro:</label>
+            <input type="range" min="0" max="1" step="1" [value]="blancoNegro()" (input)="actualizar('blancoNegro', $event)">
+            <span>{{ blancoNegro() === 1 ? 'Activado' : 'Desactivado' }}</span>
         </div>
     </div>
 </div>
